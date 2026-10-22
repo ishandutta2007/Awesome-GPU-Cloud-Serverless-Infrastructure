@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="360" style="background:#090d16; border-radius:12px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; overflow:hidden;">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#090d16" />
+      <stop offset="100%" stop-color="#050811" />
+    </linearGradient>
+
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <linearGradient id="gpuChipGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(30, 41, 59, 0.7)" />
+      <stop offset="100%" stop-color="rgba(15, 23, 42, 0.5)" />
+    </linearGradient>
+
+    <!-- Glowing Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255, 255, 255, 0.04)" stroke-width="1" />
+    </pattern>
+
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes pulseOrb {
+      0%, 100% { opacity: 0.25; transform: scale(1) translate(0, 0); }
+      50% { opacity: 0.55; transform: scale(1.15) translate(20px, -10px); }
+    }
+    @keyframes dataStream {
+      0% { stroke-dashoffset: 600; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes floatPill {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-7px); }
+    }
+    @keyframes floatPillDelayed {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(7px); }
+    }
+    .orb-cyan {
+      animation: pulseOrb 8s ease-in-out infinite alternate;
+      transform-origin: 200px 100px;
+    }
+    .orb-purple {
+      animation: pulseOrb 10s ease-in-out infinite alternate-reverse;
+      transform-origin: 1000px 250px;
+    }
+    .stream-line {
+      stroke-dasharray: 20 40;
+      animation: dataStream 14s linear infinite;
+    }
+    .stream-line-fast {
+      stroke-dasharray: 30 50;
+      animation: dataStream 8s linear infinite;
+    }
+    .pill-float-1 {
+      animation: floatPill 5s ease-in-out infinite;
+    }
+    .pill-float-2 {
+      animation: floatPillDelayed 6s ease-in-out infinite;
+    }
+  </style>
+
+  <!-- Deep Background Layer -->
+  <rect width="1200" height="360" fill="url(#bgGlow)" />
+  <rect width="1200" height="360" fill="url(#grid)" />
+
+  <!-- Animated Ambient Glow Orbs -->
+  <circle class="orb-cyan" cx="220" cy="120" r="140" fill="#0284c7" filter="url(#glow)" />
+  <circle class="orb-purple" cx="1020" cy="220" r="160" fill="#7c3aed" filter="url(#glow)" />
+  <circle class="orb-cyan" cx="800" cy="60" r="90" fill="#0d9488" filter="url(#glow)" opacity="0.2" />
+
+  <!-- Dynamic Circuit / Infrastructure Data Lines (Background) -->
+  <g opacity="0.35">
+    <path class="stream-line" d="M 0 80 Q 300 160 600 60 T 1200 140" fill="none" stroke="#38bdf8" stroke-width="2" />
+    <path class="stream-line-fast" d="M 0 280 Q 400 180 800 300 T 1200 240" fill="none" stroke="#818cf8" stroke-width="2" />
+    <path class="stream-line" d="M 150 0 L 150 360" fill="none" stroke="rgba(56, 189, 248, 0.15)" stroke-width="1.5" stroke-dasharray="8 8" />
+    <path class="stream-line" d="M 1050 0 L 1050 360" fill="none" stroke="rgba(192, 132, 252, 0.15)" stroke-width="1.5" stroke-dasharray="8 8" />
+  </g>
+
+  <!-- Animated Badges & Chips (Placed Safely in Background & Accents) -->
+  <g class="pill-float-1" transform="translate(850, 45)">
+    <rect width="210" height="34" rx="17" fill="url(#cardGrad)" stroke="rgba(56, 189, 248, 0.3)" stroke-width="1" />
+    <circle cx="20" cy="17" r="5" fill="#10b981" />
+    <text x="35" y="22" fill="#94a3b8" font-size="12" font-weight="600" letter-spacing="0.5">H100 • H200 • B200 SXM</text>
+  </g>
+
+  <g class="pill-float-2" transform="translate(140, 275)">
+    <rect width="220" height="34" rx="17" fill="url(#cardGrad)" stroke="rgba(129, 140, 248, 0.3)" stroke-width="1" />
+    <circle cx="20" cy="17" r="5" fill="#38bdf8" />
+    <text x="35" y="22" fill="#94a3b8" font-size="12" font-weight="600" letter-spacing="0.5">SCALE-TO-ZERO SERVERLESS</text>
+  </g>
+
+  <g class="pill-float-1" transform="translate(820, 275)">
+    <rect width="240" height="34" rx="17" fill="url(#cardGrad)" stroke="rgba(192, 132, 252, 0.3)" stroke-width="1" />
+    <circle cx="20" cy="17" r="5" fill="#a855f7" />
+    <text x="35" y="22" fill="#94a3b8" font-size="12" font-weight="600" letter-spacing="0.5">INFINIBAND • DISTRIBUTED AI</text>
+  </g>
+
+  <!-- Main Foreground Content Area (Ensures text stays clear and readable) -->
+  <!-- Top Category Pill -->
+  <g transform="translate(435, 45)">
+    <rect width="330" height="32" rx="16" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(56, 189, 248, 0.4)" stroke-width="1" />
+    <text x="165" y="21" fill="#38bdf8" font-size="12" font-weight="700" letter-spacing="1.5" text-anchor="middle">⚡ CURATED AI INFRASTRUCTURE ⚡</text>
+  </g>
+
+  <!-- Title (Always in high contrast foreground) -->
+  <text x="600" y="145" text-anchor="middle" font-size="44" font-weight="900" fill="url(#textGrad)" letter-spacing="-1">
+    Awesome GPU Cloud &amp; Serverless
+  </text>
+
+  <!-- Subtitle -->
+  <text x="600" y="195" text-anchor="middle" font-size="20" font-weight="400" fill="#e2e8f0" letter-spacing="0.2">
+    Bare-Metal Superclusters, Serverless GPU Runtimes &amp; High-Throughput Serving
+  </text>
+
+  <!-- Capability Highlights Row -->
+  <g transform="translate(600, 235)" text-anchor="middle">
+    <text x="0" y="0" font-size="14" font-weight="500" fill="#94a3b8" letter-spacing="0.5">
+      <tspan fill="#38bdf8">Neoclouds</tspan> • 
+      <tspan fill="#a855f7">vLLM &amp; SGLang</tspan> • 
+      <tspan fill="#34d399">Triton &amp; TensorRT</tspan> • 
+      <tspan fill="#f43f5e">Modal-like Runtimes</tspan> • 
+      <tspan fill="#fbbf24">Marketplace Arbitrage</tspan>
+    </text>
+  </g>
+
+  <!-- Bottom Decorative Border Accent -->
+  <rect x="0" y="356" width="1200" height="4" fill="url(#textGrad)" />
+</svg>
