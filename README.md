@@ -128,3 +128,5 @@ Contributions are welcome! Help keep this ecosystem tracker accurate, objective,
 - This is a **community-curated** list for informational purposes.
 - Cloud GPU pricing and promotional credit availability fluctuate frequently; please verify current rates and quotas directly with providers prior to production commitments.
 - Certain high-end instances (such as NVIDIA HGX Hopper H100/H200 and Blackwell B200) enforce minimum rental allocations (e.g., full 8-GPU nodes).
+# Awesome-GPU-Cloud-Serverless-Infrastructure
+
